@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAllExperienceApi } from '../service/allAPI';
 
 function Experience() {
-    return (
-        <div className="container mx-auto xl:px-16 py-10" id='experience'>
+    const [experience, setExperience] = useState([])
 
-            <h2 className="text-4xl pt-20 font-roboto bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+    //function to get all experience
+    const getAllExperience = async () => {
+        const result = await getAllExperienceApi()
+        setExperience(result.data)
+    }
+    useEffect(() => {
+        getAllExperience()
+    }, [])
+
+    return (
+        <div className="container mx-auto lg:px-lg-padding xl:px-xl-padding" id='experience'>
+
+            <h2 className="text-4xl py-20 font-roboto bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                 EXPERIENCE
             </h2>
-            <div className="grid xl:px-24 gap-8 md:grid-cols-2 lg:grid-cols-2 mt-8">
-                <div className="bg-gray-800 p-6 shadow-lg border-2.5 border-gradient">
-                    <h3 className="text-xl font-semibold font-roboto text-white">WordPress Designer & WordPress Developer</h3>
-                    <p className="text-purple-400 font-raleway">Caliteam / Jan 2024 - April 2024</p>
-                    <p className="text-white mt-2 font-roboto">
-                        I designed and developed caliteam.org, a WordPress site showcasing my expertise in front-end development, visual design, and UX, using Elementor to create a visually captivating, responsive, and engaging website.
-                    </p>
-                </div>
-                <div className="bg-gray-800 p-6 shadow-lg border-2.5 border-gradient">
-                    <h3 className="text-xl font-semibold font-roboto text-white">WordPress Designer & WordPress Developer</h3>
-                    <p className="text-purple-400 font-raleway">Caliteam / Jan 2024 - April 2024</p>
-                    <p className="text-white mt-2 font-roboto">
-                        I designed and developed caliteam.org, a WordPress site showcasing my expertise in front-end development, visual design, and UX, using Elementor to create a visually captivating, responsive, and engaging website.
-                    </p>
-                </div>
+            <div className="grid xl:px-24 gap-8 md:grid-cols-2 lg:grid-cols-2">
+                {experience?.length > 0 ?
+                    experience.map((data) => (
+                        <div className="bg-gray-800 p-6 shadow-lg border-2.5 border-gradient">
+                            <h3 className="text-xl font-semibold font-roboto text-white">{data.jobRole}</h3>
+                            <p className="text-purple-400 font-raleway flex"><p className='hover:text-purple-700 hover:cursor-pointer'>{data.companyName}</p> / {data.location}</p>
+                            <p className="text-white mt-2 text-sm font-roboto">
+                                {data.discription}
+                            </p>
+                            {/* <a
+                                href={data.cirtificateURL}
+                                className='text-gray-400 hover:text-white font-roboto text-sm'
+                            >
+                                Certificate <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a> */}
+                        </div>
+                    ))
+                    : <p>No data avilable</p>
+                }
             </div>
 
             <h2 className="text-4xl pt-20 font-roboto bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500" id='education'>
@@ -29,9 +45,9 @@ function Experience() {
             </h2>
             <div className="mt-8 xl:px-24">
                 <div className="bg-gray-800 p-6 shadow-lg border-2.5 border-gradient">
-                    <h3 className="text-xl font-semibold font-roboto text-white">BS. Information Technology</h3>
-                    <p className="text-purple-400 font-raleway">University of Sindh / 2017 - 2021</p>
-                    <p className="text-white mt-2 font-raleway">3.25/4.00 CGPA</p>
+                    <h3 className="text-xl font-semibold font-roboto text-white">BSc Computer Science</h3>
+                    <p className="text-purple-400 font-raleway">Kannur University / 2020 - 2023</p>
+                    <a href='#' className="text-gray-400 hover:text-white mt-2 font-roboto text-sm">Certificate <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>

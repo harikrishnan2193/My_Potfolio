@@ -9,6 +9,10 @@ module.exports = {
         raleway: ['Raleway', 'serif'],
         roboto: ['Roboto', 'serif'],
       },
+      spacing: {
+        'xl-padding': '6rem',
+        'lg-padding': '4rem',
+      },
     },
   },
   plugins: [],
