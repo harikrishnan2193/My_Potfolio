@@ -8,7 +8,6 @@ function Services() {
     //function of get all service
     const getServices = async () => {
         const result = await serviceApi()
-        console.log(result.data);
         setService(result.data)
     }
     useEffect(() => {

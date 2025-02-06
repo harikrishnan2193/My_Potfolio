@@ -9,7 +9,6 @@ function Auth() {
         email: '',
         password: ''
     })
-    console.log(userData);
 
     //function for login
     const handleLogin = async (e) => {
@@ -20,7 +19,7 @@ function Auth() {
         }
         else {
             const result = await loginApi(userData)
-            console.log(result.data);
+            // console.log(result.data);
             if (result.status === 200) {
                 sessionStorage.setItem("token",result.data.token)
                 setUserData({ email: '', password: '' })

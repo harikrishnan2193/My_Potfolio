@@ -11,13 +11,12 @@ function Update() {
     hostLink: "",
     projectImage: ""
   })
-  console.log(projectDetils);
 
   const [imgPreview, setImgPreview] = useState("")
-  console.log(imgPreview);
+  // console.log(imgPreview);
 
   const [token, setToken] = useState("")
-  console.log(token);
+  // console.log(token);
 
   //function for submit project
   const handleProjectSubmit = async (e) => {
@@ -48,9 +47,8 @@ function Update() {
         }
 
         const result = await addProjectAPI(reqBody, reqHeader)
-        console.log(result);
+        // console.log(result);
         if (result.status === 200) {
-          console.log(result);
           alert('Project added succesfully')
           setProjectDetils({ projectName: "", discription: "", technology: "", githubLink: "", hostLink: "", setImgPreview: "" })
         }
@@ -152,7 +150,7 @@ function Update() {
         </div>
 
         <div className='text-white flex justify-center mt-10'><a href="/">back to portfolio <i className="fa-solid fa-arrow-right"></i></a></div>
-        
+
       </div>
 
     </>

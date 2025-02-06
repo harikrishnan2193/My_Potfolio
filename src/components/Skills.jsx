@@ -11,7 +11,7 @@ function Skills() {
     const getAllSkills = async () => {
         try {
             const result = await allSkillsApi();
-            console.log(result.data);
+            // console.log(result.data);
             setAllSkills(result.data);
         } catch (error) {
             console.error("Error fetching skills:", error);

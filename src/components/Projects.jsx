@@ -8,7 +8,6 @@ function Projects() {
   //get all project 
   const getAllProject = async () => {
     const result = await allProjectApi()
-    console.log(result.data);
     setAllProject(result.data)
   }
   useEffect(() => {
