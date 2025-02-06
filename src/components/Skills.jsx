@@ -75,7 +75,7 @@ function Skills() {
                 SKILLS
             </h2>
             <div className="mt-10 flex flex-wrap justify-center gap-6">
-                {allSkills.length > 0 ? (
+                {allSkills?.length > 0 ? (
                     allSkills.map((skill) => (
                         <div key={skill.name} className="w-full sm:w-1/3 lg:w-1/5 text-center">
                             <div className="relative w-36 h-56 mx-auto flex items-center justify-center bg-black border-2 border-blue-300 rounded-full">
