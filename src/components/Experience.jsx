@@ -47,7 +47,7 @@ function Experience() {
                 <div className="bg-gray-800 p-6 shadow-lg border-2.5 border-gradient">
                     <h3 className="text-xl font-semibold font-roboto text-white">BSc Computer Science</h3>
                     <p className="text-purple-400 font-raleway">Kannur University / 2020 - 2023</p>
-                    <a href='#' className="text-gray-400 hover:text-white mt-2 font-roboto text-sm">Certificate <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href='https://drive.google.com/file/d/1jDQLp7XB4qf5HNXxKT5zzUfuX0qMGIGG/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white mt-2 font-roboto text-sm">Certificate <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
